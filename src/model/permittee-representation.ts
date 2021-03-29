@@ -27,7 +27,7 @@ export class PermitteeRepresentation {
 
     const vPatientPassport = this.validatePatientPassport(data.patientPassport)
     if (!vPatientPassport.success) {
-      throw new Error(vPatientName.error);
+      throw new Error(vPatientPassport.error);
     }
     this.patientPassport = data.patientPassport;
 
