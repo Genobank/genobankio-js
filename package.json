@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "test": "tsc && nyc hayspec test"
+    "test": "tsc && nyc hayspec test",
+    "cli": "node -r ts-node/register src/cli/main.ts"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
   "dependencies": {
     "commander": "^7.2.0",
     "ethers": "^5.0.32",
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@hayspec/cli": "^0.10.0",
