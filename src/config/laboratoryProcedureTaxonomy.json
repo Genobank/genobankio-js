@@ -1,0 +1,92 @@
+{
+  "$version": 1,
+  "laboratoryProcedureTaxonomy": {
+    "1": {
+      "internationalName": "COVID-19-PCR",
+      "descriptionLocalizations": {
+        "en": "COVID-19 Polymerase Chain Reaction test",
+        "es": "Prueba de reacción en cadena de la polimerasa COVID-19",
+        "pt": "Teste de reação em cadeia de polimerase COVID-19",
+        "zh": "COVID-19 聚合酶链反应试验"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    },
+    "2": {
+      "internationalName": "COVID-19-ANTIGEN",
+      "descriptionLocalizations": {
+        "en": "COVID-19 antigen test",
+        "es": "Prueba de antígeno COVID-19",
+        "pt": "Teste de antígeno COVID-19",
+        "zh": "COVID-19 抗原测试"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    },
+    "3": {
+      "internationalName": "COVID-19-LAMP",
+      "descriptionLocalizations": {
+        "en": "COVID-19 loupe Mediated isothermal amplification test",
+        "es": "Prueba de amplificación isotérmica mediada por lupa COVID-19",
+        "pt": "Teste de amplificação isotérmica mediada por lupa COVID-19",
+        "zh": "COVID-19 放大镜介导的等温扩增试验"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    }
+  }
+}

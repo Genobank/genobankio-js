@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  
+  "include": [
+    "src/**/*"
+  ]
+
+}

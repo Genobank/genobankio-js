@@ -1,0 +1,42 @@
+{
+  "name": "genobankio-js",
+  "version": "0.0.1",
+  "description": "Genobank typescript/javascript lib with.",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "tsc && nyc hayspec test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Genobank/genobankio-js.git"
+  },
+  "author": "GenoBank.io",
+  "hayspec": {
+    "require": [
+      "ts-node/register"
+    ],
+    "match": [
+      "./src/**/*.test.*"
+    ]
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Genobank/genobankio-js/issues"
+  },
+  "homepage": "https://github.com/Genobank/genobankio-js#readme",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "ethers": "^5.0.32",
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@hayspec/cli": "^0.10.0",
+    "@hayspec/spec": "^0.10.0",
+    "@types/node": "^14.0.13",
+    "@types/commander": "^2.12.2",
+    "nyc": "^15.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
