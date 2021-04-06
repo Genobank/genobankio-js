@@ -11,18 +11,20 @@ program
   .version('0.0.1')
   .description('Genobankio-js CLI');
 
-function errorColor(str) {
+function redColor(str) {
   // Add ANSI escape codes to display text in red.
   return `\x1b[31m${str}\x1b[0m`;
 }
 
+function yellowColor(str) {
+  // Add ANSI escape codes to display text in red.
+  return `\x1b[33m${str}\x1b[0m`;
+}
+
 program
   .configureOutput({
-    // Visibly override write routines as example!
-    writeOut: (str) => process.stdout.write(`${str}`),
-    writeErr: (str) => process.stdout.write(`${str}`),
     // Highlight errors in color.
-    outputError: (str, write) => write(errorColor(str))
+    outputError: (str, write) => write(redColor(str))
   });
 
 program
@@ -38,14 +40,14 @@ Javascript Certification Example, version 0.0.1
   `)
   .addHelpText('after', `
 Input:
-  twelveWordPhase a space-separated string of your twelve word phrase
-  permitteeSerial your GenoBank.io permittee identifier
-  patientName must match [A-Za-z0-9 .-]+
-  patientPassport must match [A-Z0-9 -]+
-  procedureCode must be a procedure key in the Laboratory Procedure Taxonomy
-  procedureResultCode must be a result key in the Laboratory Procedure Taxonomy
-  procedureSerial must match [A-Z0-9 -]*
-  timestamp procedure/sample collection time as number of milliseconds since UNIX epoch
+  twelveWordPhase       a space-separated string of your twelve word phrase
+  permitteeSerial       your GenoBank.io permittee identifier
+  patientName           must match [A-Za-z0-9 .-]+
+  patientPassport       must match [A-Z0-9 -]+
+  procedureCode         must be a procedure key in the Laboratory Procedure Taxonomy
+  procedureResultCode   must be a result key in the Laboratory Procedure Taxonomy
+  procedureSerial       must match [A-Z0-9 -]*
+  timestamp             procedure/sample collection time as number of milliseconds since UNIX epoch
 
 Output:
   A complete URL for the certificate is printed to standard output. 
@@ -58,34 +60,58 @@ References:
 
     
   .action(async (twelveWordPhase, permitteeSerial, patientName, patientPassport, procedureCode, procedureResultCode, procedureSerial, timestamp, options) => {
-    let networkType = NetworkType.TEST;
-    if (options.production) {
-      networkType = NetworkType.PRODUCTION;
+
+    try {
+      console.log("Blockchain Lab Results Certification");
+      console.log("Javascript Certification Example, version 0.0.1");
+      console.log("(c) GenoBank.io\n");
+
+      let networkType = NetworkType.TEST;
+      if (options.production) {
+        networkType = NetworkType.PRODUCTION;
+        console.log(`Network: ${redColor('PRODUCTION NETWORK (BILLABLE)')}`)
+      } else {
+        console.log(`Network: ${yellowColor('TEST NETWORK')}`)
+      }
+
+      const network = new Network(networkType);
+
+      const signer = new PermitteeSigner(twelveWordPhase, parseInt(permitteeSerial));
+      console.log(`Address: ${yellowColor(signer.getAddress())}`);
+
+      const taxonomy = new LaboratoryProcedureTaxonomy();
+      const procedure = taxonomy.getProcedureByCode(procedureCode);
+      const procedureResult = taxonomy.getProcedureResultByCode(procedure, procedureResultCode);
+    
+      const permittee = new PermitteeRepresentation({
+        network,
+        patientName,
+        patientPassport,
+        permitteeSerial,
+        procedureTime: new Date(parseInt(timestamp)),
+        procedure,
+        procedureResult,
+        procedureSerial
+      });
+
+      console.log(`Patient: ${yellowColor(permittee.patientName)}`);
+      console.log(`Passport: ${yellowColor(permittee.patientPassport)}`);
+      console.log(`Procedure: ${yellowColor(permittee.procedure.code)}`);
+      console.log(`Result: ${yellowColor(permittee.procedureResult.code)}`);
+      console.log(`Serial: ${yellowColor(permittee.procedureSerial)}`);
+      console.log(`Time: ${yellowColor(permittee.procedureTime.getTime())}`);
+    
+      const platform = new Platform(network);
+    
+      const signature = await signer.sign(permittee);
+      console.log(`Signature: ${yellowColor(signature.signature)}`);
+      console.log('Notarizing on blockchain...');
+    
+      const res = await platform.notarize(permittee, signature);
+      console.log(res);
+    } catch (e) {
+      console.log(redColor(e));
     }
-   
-    const network = new Network(networkType);
-    const taxonomy = new LaboratoryProcedureTaxonomy();
-    const procedure = taxonomy.getProcedureByCode(procedureCode);
-    const procedureResult = taxonomy.getProcedureResultByCode(procedure, procedureResultCode);
-  
-    const permittee = new PermitteeRepresentation({
-      network,
-      patientName,
-      patientPassport,
-      permitteeSerial,
-      procedureTime: new Date(timestamp),
-      procedure,
-      procedureResult,
-      procedureSerial
-    });
-  
-    const signer = new PermitteeSigner(twelveWordPhase, parseInt(permitteeSerial));
-  
-    const platform = new Platform(network);
-  
-    const signature = await signer.sign(permittee);
-    const res = await platform.notarize(permittee, signature);
-    console.log(res);
   });
 
 program.parse(process.argv);

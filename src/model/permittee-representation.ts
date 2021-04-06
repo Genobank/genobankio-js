@@ -36,13 +36,9 @@ export class PermitteeRepresentation {
       throw new Error(vSerial.error);
     }
     this.procedureSerial = data.procedureSerial;
-
     this.procedureTime = data.procedureTime;
-    
     this.permitteeSerial = data.permitteeSerial;
-
     this.procedure = data.procedure;
-
     this.procedureResult = data.procedureResult;
   }
 

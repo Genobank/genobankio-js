@@ -22,4 +22,8 @@ export class PermitteeSigner {
       claim
     } as SignatureInformation;
   }
+
+  public getAddress() {
+    return this.wallet.address;
+  }
 }

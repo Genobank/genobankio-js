@@ -18,7 +18,6 @@ export class Platform {
   }
 
   private async createCertificate(data: SignatureInformation) {
-    console.log(`${this.network.apiUrlBase}/certificates`);
     return await axios({
       url: `${this.network.apiUrlBase}/certificates`,
       method: 'POST',

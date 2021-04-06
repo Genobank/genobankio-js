@@ -45,7 +45,7 @@ export class LaboratoryProcedureTaxonomy {
     
     const procedureResult = (procedure as LaboratoryProcedure).results.find((p) => p.code == code);
     if (!procedureResult) {
-      throw new Error('Unsupported procedure code.');
+      throw new Error('Unsupported procedure result code.');
     }
     
     return procedureResult;
