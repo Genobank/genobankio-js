@@ -36,13 +36,9 @@ export class PermitteeRepresentation {
       throw new Error(vSerial.error);
     }
     this.procedureSerial = data.procedureSerial;
-
     this.procedureTime = data.procedureTime;
-    
     this.permitteeSerial = data.permitteeSerial;
-
     this.procedure = data.procedure;
-
     this.procedureResult = data.procedureResult;
   }
 
@@ -109,7 +105,7 @@ export class PermitteeRepresentation {
       this.procedure.code,
       this.procedureResult.code,
       this.procedureSerial,
-      this.procedureTime.toISOString(),
+      this.procedureTime.getTime(),
       this.permitteeSerial,
     ].join('|');
   }
@@ -122,7 +118,7 @@ export class PermitteeRepresentation {
       this.procedure.internationalName,
       this.procedureResult.internationalName,
       this.procedureSerial,
-      this.procedureTime.getTime(),
+      this.procedureTime.toISOString(),
       this.permitteeSerial,
     ].join('|');
   }

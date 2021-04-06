@@ -27,3 +27,10 @@ export type SignatureInformation = {
   claim: string,
   permitteeSerial: number,
 }
+
+export type PlatformData = {
+  hash: string,
+  signature: string,
+  txHash: string,
+  timestamp: Date
+}
