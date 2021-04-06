@@ -10,6 +10,10 @@ If you want to contribute here are the main commands.
 
 `npm run tsc`
 
+If you want to build for browser run:
+
+`npm run webpack` which will result in `./dist/bundle.js` file.
+
 ### Test
 
 `npm test`
@@ -22,7 +26,7 @@ Compiled CLIs will become available in `/build` folder.
 
 ## Usage
 
-If you compile/package the CLI using command in development section you will find compiled CLI version. Depending on the platform you wish to run CLI on you start the CLI by moving in terminal to the `/build` folder and running the cli by typing: `./main-osName` and command. Example for macos: `./main-macos certificates --help`; 
+If you compile/package the CLI using command in development section you will find compiled CLI version. Depending on the platform you wish to run CLI on you start the CLI by moving in terminal to the `/build` folder and running the cli by typing: `./main-osName` and command. Example for macos: `./main-macos certificates --help`.
 
 Cli has only one command which is `certificates`. By default it uses `test` environment.
 
