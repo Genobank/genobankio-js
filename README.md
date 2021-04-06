@@ -22,7 +22,7 @@ Compiled CLIs will become available in `/build` folder.
 
 ## Usage
 
-If you compile/package the CLI using command in development section you will find compiled CLI version. Depending on the platform you wish to run CLI on you start the CLI by moving in terminal to the `/build` folder and running the cli by typing: `./main-osName` and command. Example for macos: `./main-macos certificates --help`; 
+If you compile/package the CLI using command in development section you will find compiled CLI version. Depending on the platform you wish to run CLI on you start the CLI by moving in terminal to the `/build` folder and running the cli by typing: `./main-osName` and command. Example for macos: `./main-macos certificates --help`.
 
 Cli has only one command which is `certificates`. By default it uses `test` environment.
 
