@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "test": "tsc && nyc hayspec test",
-    "cli": "node -r ts-node/register src/cli/main.ts"
+    "cli": "node -r ts-node/register src/cli/main.ts",
+    "pkg": "tsc && pkg ./dist/cli/main.js --out-path ./build"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "@types/commander": "^2.12.2",
     "nyc": "^15.1.0",
     "ts-node": "^8.10.2",
+    "pkg": "^4.5.1",
     "typescript": "^3.9.5"
   }
 }
