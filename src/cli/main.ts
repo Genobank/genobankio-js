@@ -69,15 +69,15 @@ References:
       let networkType = NetworkType.TEST;
       if (options.production) {
         networkType = NetworkType.PRODUCTION;
-        console.log(`Network: ${redColor('PRODUCTION NETWORK (BILLABLE)')}`)
+        console.log(`Network:    ${redColor('PRODUCTION NETWORK (BILLABLE)')}`)
       } else {
-        console.log(`Network: ${yellowColor('TEST NETWORK')}`)
+        console.log(`Network:    ${yellowColor('TEST NETWORK')}`)
       }
 
       const network = new Network(networkType);
 
       const signer = new PermitteeSigner(twelveWordPhase, parseInt(permitteeSerial));
-      console.log(`Address: ${yellowColor(signer.getAddress())}`);
+      console.log(`Address:    ${yellowColor(signer.getAddress())}`);
 
       const taxonomy = new LaboratoryProcedureTaxonomy();
       const procedure = taxonomy.getProcedureByCode(procedureCode);
@@ -94,21 +94,23 @@ References:
         procedureSerial
       });
 
-      console.log(`Patient: ${yellowColor(permittee.patientName)}`);
-      console.log(`Passport: ${yellowColor(permittee.patientPassport)}`);
-      console.log(`Procedure: ${yellowColor(permittee.procedure.code)}`);
-      console.log(`Result: ${yellowColor(permittee.procedureResult.code)}`);
-      console.log(`Serial: ${yellowColor(permittee.procedureSerial)}`);
-      console.log(`Time: ${yellowColor(permittee.procedureTime.getTime())}`);
+      console.log(`Patient:    ${yellowColor(permittee.patientName)}`);
+      console.log(`Passport:   ${yellowColor(permittee.patientPassport)}`);
+      console.log(`Procedure:  ${yellowColor(permittee.procedure.code)}`);
+      console.log(`Result:     ${yellowColor(permittee.procedureResult.code)}`);
+      console.log(`Serial:     ${yellowColor(permittee.procedureSerial)}`);
+      console.log(`Time:       ${yellowColor(permittee.procedureTime.getTime())}`);
     
       const platform = new Platform(network);
     
       const signature = await signer.sign(permittee);
-      console.log(`Signature: ${yellowColor(signature.signature)}`);
+      console.log(`Signature:  ${yellowColor(signature.signature)}`);
       console.log('Notarizing on blockchain...');
     
-      const res = await platform.notarize(permittee, signature);
-      console.log(res);
+      const certificate = await platform.notarize(permittee, signature);
+      console.log('Certificate URL');
+      console.log(certificate.toUrl());
+      
     } catch (e) {
       console.log(redColor(e));
     }

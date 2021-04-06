@@ -9,11 +9,6 @@ import { Platform } from '../network/platform';
 const spec = new Spec<{
 }>();
 
-spec.beforeEach(async (ctx) => {
-  // const apiClient = new APIClient();
-  // ctx.set('apiClient', apiClient);
-});
-
 spec.test('Creates test certificate', async (ctx) => {
   const network = new Network(NetworkType.TEST);
 
