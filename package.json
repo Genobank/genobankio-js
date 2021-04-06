@@ -7,7 +7,8 @@
     "tsc": "tsc",
     "test": "tsc && nyc hayspec test",
     "cli": "node -r ts-node/register src/cli/main.ts",
-    "pkg": "tsc && pkg ./dist/cli/main.js --out-path ./build"
+    "pkg": "tsc && pkg ./dist/cli/main.js --out-path ./build",
+    "webpack": "npx webpack"
   },
   "repository": {
     "type": "git",
@@ -35,11 +36,14 @@
   "devDependencies": {
     "@hayspec/cli": "^0.10.0",
     "@hayspec/spec": "^0.10.0",
-    "@types/node": "^14.0.13",
     "@types/commander": "^2.12.2",
+    "@types/node": "^14.0.13",
     "nyc": "^15.1.0",
-    "ts-node": "^8.10.2",
     "pkg": "^4.5.1",
-    "typescript": "^3.9.5"
+    "ts-loader": "^8.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
   }
 }

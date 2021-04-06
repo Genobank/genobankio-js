@@ -10,6 +10,10 @@ If you want to contribute here are the main commands.
 
 `npm run tsc`
 
+If you want to build for browser run:
+
+`npm run webpack` which will result in `./dist/bundle.js` file.
+
 ### Test
 
 `npm test`
