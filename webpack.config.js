@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     filename: 'genobank.min.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'js'),
   },
   target: 'web'
 }
