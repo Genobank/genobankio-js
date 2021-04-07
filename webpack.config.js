@@ -1,21 +1,25 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+  entry: './src/webpack.js',
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.tsx?$/,
+  //       loader: 'ts-loader',
+  //       exclude: /node_modules/,
+  //     },
+  //   ],
+  // },
+  // resolve: {
+  //   extensions: [ '.tsx', '.ts', '.js' ],
+  // },
+  externals: {
+    'window': {},
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'genobank.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  target: 'web'
 }

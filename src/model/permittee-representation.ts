@@ -126,5 +126,4 @@ export class PermitteeRepresentation {
   public getClaim() {
     return utils.hashMessage(this.getFullSerialization());
   }
-
 }

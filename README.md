@@ -31,7 +31,7 @@ cd genobankio-js
 
 If you want to build for browser run:
 
-`npm run webpack` which will result in `./dist/bundle.js` file.
+`npm run webpack` which will result in `./dist/genobank.min.js` file.
 
 ### Test
 
