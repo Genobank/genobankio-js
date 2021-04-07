@@ -6,6 +6,25 @@ This project demonstrates how to notarize one lab result certification on the bl
 
 If you want to contribute here are the main commands.
 
+### Prerequisites
+
+1. Supported operating systems are macOS, Linux and Windows
+2. Install node js from: https://nodejs.dev/. Only use stable versions.
+
+### Downloading
+
+Get the latest source code from GitHub
+
+cd ~
+mkdir -p Developer
+cd Developer
+git clone https://github.com/Genobank/genobankio-js.git
+cd genobankio-js
+
+### Install dependencies 
+
+`npm install`
+
 ### Build
 
 `npm run tsc`
@@ -18,11 +37,17 @@ If you want to build for browser run:
 
 `npm test`
 
+### Run
+
+`npm run cli`
+
 ### Compile CLI for all platforms
 
 `npm run pkg`
 
 Compiled CLIs will become available in `/build` folder.
+
+Note: Only works with node version 10 to 14.
 
 ## Usage
 
@@ -60,4 +85,12 @@ References:
   Laboratory Procedure Taxonomy (test): https://genobank.io/certificates/laboratoryProcedureTaxonomy.json
   Laboratory Procedure Taxonomy (production): https://genobank.io/test/certificates/laboratoryProcedureTaxonomy.json
 
+```
+
+### Example
+
+Usage example for compiled macos cli. 
+
+```
+./main-macos certificates 'wrong outside clever wagon father insane boy junk punch duck drift cupboard' 41 'Bob' '1234' '1' 'N' '' 1614069145429
 ```
