@@ -77,7 +77,3 @@ docs/.vuepress/dist
 # Database file
 database.sqlite
 
-# Binary packages
-cron-linux
-cron-macos
-cron-win.exe
