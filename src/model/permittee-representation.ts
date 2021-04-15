@@ -19,19 +19,19 @@ export class PermitteeRepresentation {
   constructor(data: PermitteeRepresentationsInput) {
     this.network = data.network;
 
-    const vPatientName = this.validatePatientName(data.patientName)
+    const vPatientName = PermitteeRepresentation.validatePatientName(data.patientName)
     if (!vPatientName.success) {
       throw new Error(vPatientName.error);
     }
     this.patientName = data.patientName;
 
-    const vPatientPassport = this.validatePatientPassport(data.patientPassport)
+    const vPatientPassport = PermitteeRepresentation.validatePatientPassport(data.patientPassport)
     if (!vPatientPassport.success) {
       throw new Error(vPatientPassport.error);
     }
     this.patientPassport = data.patientPassport;
 
-    const vSerial = this.validateProcedureSerialNumber(data.procedureSerial)
+    const vSerial = PermitteeRepresentation.validateProcedureSerialNumber(data.procedureSerial)
     if (!vSerial.success) {
       throw new Error(vSerial.error);
     }
@@ -42,7 +42,7 @@ export class PermitteeRepresentation {
     this.procedureResult = data.procedureResult;
   }
 
-  public validatePatientPassport(patientPassport: string) {
+  public static validatePatientPassport(patientPassport: string) {
     const regex = /^[A-Z0-9 -]+$/g; // A–Z, 0–9, space, -
     const patientPassportRes = regex.exec(patientPassport);
   
@@ -61,7 +61,7 @@ export class PermitteeRepresentation {
   
     return data;
   }
-  public validatePatientName(patientName: string) {
+  public static validatePatientName(patientName: string) {
     const regex = /^[A-Za-z0-9 -.]+$/g; // A–Z, a–z, 0–9, space, -, .
     const patientNameRes = regex.exec(patientName);
   
@@ -81,7 +81,7 @@ export class PermitteeRepresentation {
     return data;
   }
   
-  public validateProcedureSerialNumber(procedureSerial: string) {
+  public static validateProcedureSerialNumber(procedureSerial: string) {
     const regex = /^[A-Z0-9 -]*$/g; // A–Z, 0–9, space, -
     const procedureSerialRes = regex.exec(procedureSerial);
   
