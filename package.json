@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "test": "tsc && nyc hayspec test",
     "cli": "node -r ts-node/register src/cli/main.ts",
-    "pkg": "tsc && pkg ./dist/cli/main.js --out-path ./build",
+    "pkg": "tsc && pkg ./dist/cli/main.js --out-path ./compiled",
     "webpack": "tsc && npx webpack"
   },
   "repository": {
