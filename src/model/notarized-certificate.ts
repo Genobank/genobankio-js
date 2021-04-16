@@ -4,6 +4,8 @@ import { PermitteeRepresentation } from "./permittee-representation";
 
 export class NotarizedCertificate {
 
+  private namespaceSuffix = '.certificates.v1.platform-certification';
+
   public network: Network;
   public permitteeRepresentation: PermitteeRepresentation;
   public permitteeSignature: SignatureInformation;
@@ -38,6 +40,18 @@ export class NotarizedCertificate {
       this.platformData.signature,
       this.platformData.txHash
     ].join('|');
+  } 
+
+  public getPlatformFullSerialization() {
+    return [
+      `${this.network.namespacePrefix}${this.namespaceSuffix}`,
+      this.permitteeSignature.signature,
+      this.platformData.timestamp.toISOString(),
+    ].join('|');
+  }
+
+  public getNamespace() {
+    return `${this.network.namespacePrefix}${this.namespaceSuffix}`;
   }
 
   public toUrl() {

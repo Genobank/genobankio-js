@@ -123,6 +123,10 @@ export class PermitteeRepresentation {
     ].join('|');
   }
 
+  public getNamespace() {
+    return `${this.network.namespacePrefix}${this.namespaceSuffix}`;
+  }
+
   public getClaim() {
     return utils.hashMessage(this.getFullSerialization());
   }
