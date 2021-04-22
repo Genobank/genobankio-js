@@ -62,7 +62,7 @@ export class PermitteeRepresentation {
     return data;
   }
   public static validatePatientName(patientName: string) {
-    const regex = /^[A-Za-z0-9 -.]+$/g; // A–Z, a–z, 0–9, space, -, .
+    const regex = /^[A-Za-z0-9 -.ñÑ]+$/g; // A–Z, a–z, 0–9, space, -, .
     const patientNameRes = regex.exec(patientName);
   
     let data = {
