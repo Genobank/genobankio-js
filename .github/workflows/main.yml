@@ -1,0 +1,27 @@
+
+# https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+name: Node.js CI
+
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#filtering-for-specific-branches-tags-and-paths
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x] # https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run tsc
+    - run: npm run webpack
+    - run: npm run pkg
+    - run: npm test
