@@ -12,7 +12,7 @@ export class PermitteeSigner {
     this.permitteeSerial = permitteeSerial;
   }
 
-  public async sign(representation: PermitteeRepresentation) {
+  public async sign(representation: PermitteeRepresentation): Promise<SignatureInformation> {
     const serialized = representation.getFullSerialization();
     const claim = representation.getClaim();
     const signature = await this.wallet.signMessage(serialized);
@@ -23,7 +23,7 @@ export class PermitteeSigner {
     } as SignatureInformation;
   }
 
-  public getAddress() {
+  public getAddress(): string {
     return this.wallet.address;
   }
 }

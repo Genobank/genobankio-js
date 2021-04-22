@@ -9,7 +9,7 @@ import { Platform } from '../network/platform';
 const spec = new Spec<{
 }>();
 
-spec.test('Creates test certificate', async (ctx) => {
+spec.test('Creates test certificate', async () => {
   const network = new Network(NetworkType.TEST);
 
   const taxonomy = new LaboratoryProcedureTaxonomy();

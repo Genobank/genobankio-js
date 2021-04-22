@@ -34,3 +34,8 @@ export type PlatformData = {
   txHash: string,
   timestamp: Date
 }
+
+export type ValidateResult = {
+  success: boolean,
+  error: string
+}

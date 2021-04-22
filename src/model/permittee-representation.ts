@@ -1,4 +1,4 @@
-import { LaboratoryProcedure, LaboratoryProcedureResult, PermitteeRepresentationsInput } from "../config/types";
+import { LaboratoryProcedure, LaboratoryProcedureResult, PermitteeRepresentationsInput, ValidateResult } from "../config/types";
 import { Network } from "./network";
 import { utils } from 'ethers';
 
@@ -42,11 +42,11 @@ export class PermitteeRepresentation {
     this.procedureResult = data.procedureResult;
   }
 
-  public static validatePatientPassport(patientPassport: string) {
+  public static validatePatientPassport(patientPassport: string): ValidateResult {
     const regex = /^[A-Z0-9 -]+$/g; // A–Z, 0–9, space, -
     const patientPassportRes = regex.exec(patientPassport);
   
-    let data = {
+    const data = {
       success: true,
       error: null
     }
@@ -61,11 +61,11 @@ export class PermitteeRepresentation {
   
     return data;
   }
-  public static validatePatientName(patientName: string) {
+  public static validatePatientName(patientName: string): ValidateResult {
     const regex = /^[A-Za-z0-9 -.ñÑ]+$/g; // A–Z, a–z, 0–9, space, -, .
     const patientNameRes = regex.exec(patientName);
   
-    let data = {
+    const data = {
       success: true,
       error: null
     }
@@ -81,11 +81,11 @@ export class PermitteeRepresentation {
     return data;
   }
   
-  public static validateProcedureSerialNumber(procedureSerial: string) {
+  public static validateProcedureSerialNumber(procedureSerial: string): ValidateResult {
     const regex = /^[A-Z0-9 -]*$/g; // A–Z, 0–9, space, -
     const procedureSerialRes = regex.exec(procedureSerial);
   
-    let data = {
+    const data = {
       success: true,
       error: null
     }
@@ -98,7 +98,7 @@ export class PermitteeRepresentation {
     return data;
   }
 
-  public getTightSerialization() {
+  public getTightSerialization(): string {
     return [
       this.patientName,
       this.patientPassport,
@@ -110,7 +110,7 @@ export class PermitteeRepresentation {
     ].join('|');
   }
 
-  public getFullSerialization() {
+  public getFullSerialization(): string {
     return [
       `${this.network.namespacePrefix}${this.namespaceSuffix}`,
       this.patientName,
@@ -123,11 +123,11 @@ export class PermitteeRepresentation {
     ].join('|');
   }
 
-  public getNamespace() {
+  public getNamespace(): string {
     return `${this.network.namespacePrefix}${this.namespaceSuffix}`;
   }
 
-  public getClaim() {
+  public getClaim(): string {
     return utils.hashMessage(this.getFullSerialization());
   }
 }
