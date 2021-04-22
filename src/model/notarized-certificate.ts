@@ -22,7 +22,7 @@ export class NotarizedCertificate {
     this.platformData = platformData;
   }
 
-  public getTightSerialization() {
+  public getTightSerialization(): string {
     return [
       this.permitteeRepresentation.getTightSerialization(),
       this.permitteeSignature.signature,
@@ -32,7 +32,7 @@ export class NotarizedCertificate {
     ].join('|');
   }
 
-  public getFullSerialization() {
+  public getFullSerialization(): string {
     return [
       this.permitteeRepresentation.getFullSerialization(),
       this.permitteeSignature.signature,
@@ -42,7 +42,7 @@ export class NotarizedCertificate {
     ].join('|');
   } 
 
-  public getPlatformFullSerialization() {
+  public getPlatformFullSerialization(): string {
     return [
       `${this.network.namespacePrefix}${this.namespaceSuffix}`,
       this.permitteeSignature.signature,
@@ -50,11 +50,11 @@ export class NotarizedCertificate {
     ].join('|');
   }
 
-  public getNamespace() {
+  public getNamespace(): string {
     return `${this.network.namespacePrefix}${this.namespaceSuffix}`;
   }
 
-  public toUrl() {
+  public toUrl(): string {
     return encodeURI(`${this.network.certificateUrlBase}${this.getTightSerialization()}`);
   }
 }

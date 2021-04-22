@@ -10,6 +10,7 @@ export class LaboratoryProcedureTaxonomy {
       const results = [] as LaboratoryProcedureResult[];
       for (const [rKey, rValue] of Object.entries(data.laboratoryProcedureTaxonomy[key].resultsTaxonomy)) {
         const procedureResult = {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           internationalName: (rValue as any).internationalName,
           code: rKey
         } as LaboratoryProcedureResult;
@@ -17,6 +18,7 @@ export class LaboratoryProcedureTaxonomy {
         results.push(procedureResult);
       }
       const procedure = {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         internationalName: (value as any).internationalName,
         code: key,
         results
@@ -26,7 +28,7 @@ export class LaboratoryProcedureTaxonomy {
     }
   }
 
-  public getProcedureByCode(code: string) {
+  public getProcedureByCode(code: string): LaboratoryProcedure {
     const procedure = this.procedures.find((p) => p.code == code);
     if (!procedure) {
       throw new Error('Unsupported procedure code.');
@@ -34,7 +36,7 @@ export class LaboratoryProcedureTaxonomy {
     return procedure; 
   }
 
-  public getProcedureResultByCode(procedure: string | LaboratoryProcedure, code: string) {
+  public getProcedureResultByCode(procedure: string | LaboratoryProcedure, code: string): LaboratoryProcedureResult {
     if (procedure instanceof String) {
       procedure = this.procedures.find((p) => p.code == procedure);
     }
