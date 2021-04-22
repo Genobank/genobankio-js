@@ -24,4 +24,5 @@ jobs:
     - run: npm run tsc
     - run: npm run webpack
     - run: npm run pkg
+    - run: npm run eslint
     - run: npm test
