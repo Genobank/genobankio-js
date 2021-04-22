@@ -55,6 +55,6 @@ export class NotarizedCertificate {
   }
 
   public toUrl() {
-    return `${this.network.certificateUrlBase}${this.getTightSerialization()}`;
+    return encodeURI(`${this.network.certificateUrlBase}${this.getTightSerialization()}`);
   }
 }
