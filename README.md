@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/Genobank/genobankio-js/actions/workflows/main.yml/badge.svg)](https://github.com/Genobank/genobankio-js/actions/workflows/main.yml)
+
 # Blockchain Lab Results Certification
 
 This project demonstrates how to notarize one lab result certification on the blockchain with GenoBank.io. This is written in TypeScript. It can be uses as TypeScript/JavaScript library or can be build as CLI for any platform.
