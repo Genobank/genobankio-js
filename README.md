@@ -50,6 +50,10 @@ Usage example for compiled macos cli.
 ./main-macos certificates 'wrong outside clever wagon father insane boy junk punch duck drift cupboard' 41 'Bob' '1234' '1' 'N' '' 1614069145429
 ```
 
+## Specification
+
+The specification for Certificates is published at https://docs.genobank.io/certificates/.
+
 ## Development
 
 If you want to contribute here are the main commands.
