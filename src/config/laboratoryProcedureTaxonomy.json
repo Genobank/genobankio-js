@@ -87,6 +87,26 @@
           }
         }
       }
+    },
+    "4": {
+      "internationalName": "COVID-19-VACCINE",
+      "descriptionLocalizations": {
+        "en": "COVID-19 vaccine was administered",
+        "es": "Se administró la vacuna COVID-19",
+        "pt": "Vacina COVID-19 foi administrada",
+        "zh": "接种了COVID-19疫苗"
+      },
+      "resultsTaxonomy": {
+        "C": {
+          "internationalName": "COMPLETE",
+          "descriptionLocalizations": {
+            "en": "All required doses were administered completely",
+            "es": "Todas las dosis requeridas se administraron por completo",
+            "pt": "Todas as doses necessárias foram administradas completamente",
+            "zh": "所有所需的剂量都完全施用"
+          }
+        }
+      }
     }
   }
 }
