@@ -70,10 +70,12 @@ build
 dist
 conventions/.vuepress/dist
 docs/.vuepress/dist
+compiled
 
 # IDE configuration
 .vscode
 
 # Database file
 database.sqlite
+
 
