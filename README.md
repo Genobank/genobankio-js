@@ -102,3 +102,19 @@ If you want to build for browser run:
 Compiled CLIs will become available in `/compiled` folder.
 
 Note: Only works with node version 10 to 14.
+
+## Release
+
+We are using GitHub to host our releases. This is done in a way that an github branch that corresponds with release version is created where the version code is hosted.
+Main branch is used for development.
+
+### Instructions
+
+When main branch is ready for a new release:
+
+1. Create a new branch from main branch with desired version name.
+2. On this branch generate webpack with `npm run webpack` and commit it.
+3. On this branch build CLI with: `npm run pkg`.
+4. On Github create a new Release and attach files locates in `/compiled` folder (this was generated in step 3) as well as `./js/genobank.min.js` file.
+5. Use `https://cdn.jsdelivr.net/gh/Genobank/genobankio-js@1.0.0/js/genobank.min.js` link for serving files. Replace `1.0.0` in the link with the new version.
+6. If you need SRI link you can use https://www.srihash.org/ to generate it.
