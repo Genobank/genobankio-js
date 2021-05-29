@@ -111,16 +111,16 @@ All steps below must be done or detailed issues created on the same day.
 
 1. Create a [release tag and GitHub release](https://github.com/Genobank/genobankio-js/releases)
 2. Update all supported front-end clients
-  1. Somos
-  2. https://github.com/Genobank/portunus.io
-  3. https://github.com/Genobank/laboratory-asombroso
-  4. https://github.com/Genobank/mds-certificados
+   1. Somos
+   2. https://github.com/Genobank/portunus.io
+   3. https://github.com/Genobank/laboratory-asombroso
+   4. https://github.com/Genobank/mds-certificados
 3. Update [documentation for GitHub certificates](https://docs.genobank.io/certificates/)
-  1. Update version number there and anything else that needs updating
+   1. Update version number there and anything else that needs updating
 4. Update all other certificates implementations (since this JS repo is the reference implementation) and make releases with the same version number
-  1. https://github.com/Genobank/genobankio-dot-net
-  2. https://github.com/Genobank/genobankioj
-  3. https://github.com/Genobank/genobankio-php
+   1. https://github.com/Genobank/genobankio-dot-net
+   2. https://github.com/Genobank/genobankioj
+   3. https://github.com/Genobank/genobankio-php
 
 We are using GitHub to host our releases. This is done in a way that a GitHub branch that corresponds with release version is created where the version code is hosted.
 
