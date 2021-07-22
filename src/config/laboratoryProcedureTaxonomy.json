@@ -107,6 +107,35 @@
           }
         }
       }
+    },
+    "5": {
+      "internationalName": "COVID-19-IgG",
+      "descriptionLocalizations": {
+        "en": "COVID-19 IgG antibody test was administered",
+        "es": "Se administró la prueba de anticuerpos IgG COVID-19",
+        "pt": "O teste de anticorpos COVID-19 IgG foi administrado",
+        "zh": "进行了 COVID-19 IgG 抗体测试"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "IgG SARS-CoV-2 not detected",
+            "es": "IgG SARS-CoV-2 no se detectó",
+            "pt": "IgG SARS-CoV-2 não foi detectado",
+            "zh": "未检测到 SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "IgG SARS-CoV-2 was detected >15 UA/mL",
+            "es": "IgG SARS-CoV-2 se detectó >15 UA/mL",
+            "pt": "IgG SARS-CoV-2 foi detectado >15 UA/mL",
+            "zh": "检测到SARS-CoV-2 >15 UA/mL"
+          }
+        }
+      }
     }
   }
 }
