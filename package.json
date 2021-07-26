@@ -1,6 +1,6 @@
 {
   "name": "genobankio-js",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "Genobank typescript/javascript lib with.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
