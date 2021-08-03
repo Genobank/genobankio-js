@@ -109,12 +109,12 @@
       }
     },
     "5": {
-      "internationalName": "COVID-19-IgG",
+      "internationalName": "SARS-CoV-2-IgG",
       "descriptionLocalizations": {
-        "en": "COVID-19 IgG antibody test was administered",
-        "es": "Se administró la prueba de anticuerpos IgG COVID-19",
-        "pt": "O teste de anticorpos COVID-19 IgG foi administrado",
-        "zh": "进行了 COVID-19 IgG 抗体测试"
+        "en": "SARS-CoV2 IgG antibody test was administered",
+        "es": "Se administró la prueba de anticuerpos IgG SARS-CoV2",
+        "pt": "O teste de anticorpos SARS-CoV2 IgG foi administrado",
+        "zh": "进行了 SARS-CoV2 IgG 抗体测试"
       },
       "resultsTaxonomy": {
         "N": {
