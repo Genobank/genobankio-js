@@ -2,7 +2,7 @@
   "$version": 1,
   "laboratoryProcedureTaxonomy": {
     "1": {
-      "internationalName": "SARS-CoV-2 RT-PCR",
+      "internationalName": "COVID-19-PCR",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 Polymerase Chain Reaction test",
         "es": "Prueba de reacción en cadena de la polimerasa SARS-CoV-2",
@@ -31,7 +31,8 @@
       }
     },
     "2": {
-      "internationalName": "SARS-CoV-2-ANTIGEN",
+      "status": "active",
+      "internationalName": "COVID-19-ANTIGEN",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 antigen test",
         "es": "Prueba de antígeno SARS-CoV-2",
@@ -60,7 +61,7 @@
       }
     },
     "3": {
-      "internationalName": "SARS-CoV-2-LAMP",
+      "internationalName": "COVID-19-LAMP",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 loupe Mediated isothermal amplification test",
         "es": "Prueba de amplificación isotérmica mediada por lupa SARS-CoV-2",
@@ -89,7 +90,7 @@
       }
     },
     "4": {
-      "internationalName": "SARS-CoV-2-VACCINE",
+      "internationalName": "COVID-19-VACCINE",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 vaccine was administered",
         "es": "Se administró la vacuna SARS-CoV-2",
