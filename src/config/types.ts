@@ -4,7 +4,13 @@ export type LaboratoryProcedure = {
   code: string;
   internationalName: string,
   results: LaboratoryProcedureResult[],
-  descriptionLocalizations: Localization[]
+  descriptionLocalizations: Localization[],
+  status: LaboratoryProcedureStatus
+}
+
+export enum LaboratoryProcedureStatus {
+  ACTIVE = 1,
+  DEPRECATED = 2,
 }
 
 export type LaboratoryProcedureResult = {

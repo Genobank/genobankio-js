@@ -13,7 +13,7 @@ spec.test('Creates test certificate', async (ctx) => {
   const network = new Network(NetworkType.TEST);
 
   const taxonomy = new LaboratoryProcedureTaxonomy();
-  const procedure = taxonomy.getProcedureByCode('5');
+  const procedure = taxonomy.getProcedureByCode('6');
   const procedureResult = taxonomy.getProcedureResultByCode(procedure, 'N');
 
   const permittee = new PermitteeRepresentation({
