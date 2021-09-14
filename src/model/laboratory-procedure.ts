@@ -9,23 +9,69 @@ export class LaboratoryProcedureTaxonomy {
     for (const [key, value] of Object.entries(data.laboratoryProcedureTaxonomy)) {
       const results = [] as LaboratoryProcedureResult[];
       for (const [rKey, rValue] of Object.entries(data.laboratoryProcedureTaxonomy[key].resultsTaxonomy)) {
+
+        const descriptionLocalizations = [];
+        
+        for (const [dKey, dValue] of Object.entries((rValue as any).descriptionLocalizations)) {
+          descriptionLocalizations.push({
+            language: dKey,
+            translation: dValue
+          })
+        }
         const procedureResult = {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           internationalName: (rValue as any).internationalName,
+          descriptionLocalizations,
           code: rKey
         } as LaboratoryProcedureResult;
   
         results.push(procedureResult);
       }
+
+      const descriptionLocalizations = [];
+      for (const [dKey, dValue] of Object.entries((value as any).descriptionLocalizations)) {
+        descriptionLocalizations.push({
+          language: dKey,
+          translation: dValue
+        })
+      }
+
       const procedure = {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         internationalName: (value as any).internationalName,
+        descriptionLocalizations,
         code: key,
         results
       } as LaboratoryProcedure;
 
       this.procedures.push(procedure);    
     }
+  }
+
+  public getProcedureDescription(procedure: LaboratoryProcedure, language?: string): string {
+    if (!language) {
+      language = 'en';
+    }
+
+    const translation = procedure.descriptionLocalizations.find((l) => l.language === language);
+    if (translation) {
+      return translation.translation;
+    }
+
+    throw new Error('Unsupported language');
+  }
+
+  public getProcedureResultDescription(procedureResult: LaboratoryProcedureResult, language?: string): string {
+    if (!language) {
+      language = 'en';
+    }
+
+    const translation = procedureResult.descriptionLocalizations.find((l) => l.language === language);
+    if (translation) {
+      return translation.translation;
+    }
+
+    throw new Error('Unsupported language');
   }
 
   public getProcedureByCode(code: string): LaboratoryProcedure {
