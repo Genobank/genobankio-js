@@ -3,12 +3,19 @@ import { Network } from "../model/network"
 export type LaboratoryProcedure = {
   code: string;
   internationalName: string,
-  results: LaboratoryProcedureResult[]
+  results: LaboratoryProcedureResult[],
+  descriptionLocalizations: Localization[]
 }
 
 export type LaboratoryProcedureResult = {
-  code: string;
+  code: string,
   internationalName: string,
+  descriptionLocalizations: Localization[]
+}
+
+export type Localization = {
+  language: string,
+  translation: string,
 }
 
 export type PermitteeRepresentationsInput = {
