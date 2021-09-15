@@ -1,4 +1,4 @@
-import { LaboratoryProcedure, LaboratoryProcedureResult } from '../config/types';
+import { LaboratoryProcedure, LaboratoryProcedureResult, LaboratoryProcedureStatus } from '../config/types';
 import * as data from '../config/laboratoryProcedureTaxonomy.json';
 
 export class LaboratoryProcedureTaxonomy {
@@ -36,12 +36,18 @@ export class LaboratoryProcedureTaxonomy {
         })
       }
 
+      let status = LaboratoryProcedureStatus.ACTIVE;
+      if ((value as any).status && (value as any).status === 'deprecated') {
+        status = LaboratoryProcedureStatus.DEPRECATED;
+      }
+
       const procedure = {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         internationalName: (value as any).internationalName,
         descriptionLocalizations,
         code: key,
-        results
+        results,
+        status
       } as LaboratoryProcedure;
 
       this.procedures.push(procedure);    

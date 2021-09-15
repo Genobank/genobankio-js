@@ -2,6 +2,7 @@
   "$version": 1,
   "laboratoryProcedureTaxonomy": {
     "1": {
+      "status": "deprecated",
       "internationalName": "COVID-19-PCR",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 Polymerase Chain Reaction test",
@@ -31,7 +32,7 @@
       }
     },
     "2": {
-      "status": "active",
+      "status": "deprecated",
       "internationalName": "COVID-19-ANTIGEN",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 antigen test",
@@ -61,6 +62,7 @@
       }
     },
     "3": {
+      "status": "deprecated",
       "internationalName": "COVID-19-LAMP",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 loupe Mediated isothermal amplification test",
@@ -90,6 +92,7 @@
       }
     },
     "4": {
+      "status": "deprecated",
       "internationalName": "COVID-19-VACCINE",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 vaccine was administered",
@@ -110,6 +113,7 @@
       }
     },
     "5": {
+      "status": "active",
       "internationalName": "SARS-CoV-2-IgG",
       "descriptionLocalizations": {
         "en": "SARS-CoV2 IgG antibody test was administered",
@@ -134,6 +138,117 @@
             "es": "IgG SARS-CoV-2 se detectó >15 UA/mL",
             "pt": "IgG SARS-CoV-2 foi detectado >15 UA/mL",
             "zh": "检测到SARS-CoV-2 >15 UA/mL"
+          }
+        }
+      }
+    },
+    "6": {
+      "status": "active",
+      "internationalName": "SARS-CoV-2-RT-PCR",
+      "descriptionLocalizations": {
+        "en": "SARS-CoV-2 Polymerase Chain Reaction test",
+        "es": "Prueba de reacción en cadena de la polimerasa SARS-CoV-2",
+        "pt": "Teste de reação em cadeia de polimerase SARS-CoV-2",
+        "zh": "SARS-CoV-2 聚合酶链反应试验"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    },
+    "7": {
+      "status": "active",
+      "internationalName": "SARS-CoV-2-ANTIGEN",
+      "descriptionLocalizations": {
+        "en": "SARS-CoV-2 antigen test",
+        "es": "Prueba de antígeno SARS-CoV-2",
+        "pt": "Teste de antígeno SARS-CoV-2",
+        "zh": "SARS-CoV-2 抗原测试"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    },
+    "8": {
+      "status": "active",
+      "internationalName": "SARS-CoV-2-LAMP",
+      "descriptionLocalizations": {
+        "en": "SARS-CoV-2 loupe Mediated isothermal amplification test",
+        "es": "Prueba de amplificación isotérmica mediada por lupa SARS-CoV-2",
+        "pt": "Teste de amplificação isotérmica mediada por lupa SARS-CoV-2",
+        "zh": "SARS-CoV-2 放大镜介导的等温扩增试验"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was not detected",
+            "es": "SARS-CoV-2 no se detectó",
+            "pt": "SARS-CoV-2 não foi detectado",
+            "zh": "未检测到SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "SARS-CoV-2 was detected",
+            "es": "SARS-CoV-2 se detectó",
+            "pt": "SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
+    },
+    "9": {
+      "status": "active",
+      "internationalName": "SARS-CoV-2-VACCINE",
+      "descriptionLocalizations": {
+        "en": "SARS-CoV-2 vaccine was administered",
+        "es": "Se administró la vacuna SARS-CoV-2",
+        "pt": "Vacina SARS-CoV-2 foi administrada",
+        "zh": "接种了SARS-CoV-2疫苗"
+      },
+      "resultsTaxonomy": {
+        "C": {
+          "internationalName": "COMPLETE",
+          "descriptionLocalizations": {
+            "en": "All required doses were administered completely",
+            "es": "Todas las dosis requeridas se administraron por completo",
+            "pt": "Todas as doses necessárias foram administradas completamente",
+            "zh": "所有所需的剂量都完全施用"
           }
         }
       }
