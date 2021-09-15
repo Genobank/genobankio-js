@@ -144,7 +144,7 @@
     },
     "6": {
       "status": "active",
-      "internationalName": "SARS-CoV-2 RT-PCR",
+      "internationalName": "SARS-CoV-2-RT-PCR",
       "descriptionLocalizations": {
         "en": "SARS-CoV-2 Polymerase Chain Reaction test",
         "es": "Prueba de reacción en cadena de la polimerasa SARS-CoV-2",
