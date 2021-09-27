@@ -146,10 +146,10 @@
       "status": "active",
       "internationalName": "SARS-CoV-2-RT-PCR",
       "descriptionLocalizations": {
-        "en": "SARS-CoV-2 Polymerase Chain Reaction test",
-        "es": "Prueba de reacción en cadena de la polimerasa SARS-CoV-2",
-        "pt": "Teste de reação em cadeia de polimerase SARS-CoV-2",
-        "zh": "SARS-CoV-2 聚合酶链反应试验"
+        "en": "SARS-CoV-2 Polymerase Chain Reaction Test (RT-PCR)",
+        "es": "Prueba de reacción en cadena de la polimerasa sars-CoV-2 (RT-PCR)",
+        "pt": "Teste de reação em cadeia de polimerase SARS-Cov-2 (RT-PCR)",
+        "zh": "SARS-CoV-2 聚合酶链式反应测试 (RT-PCR)"
       },
       "resultsTaxonomy": {
         "N": {
