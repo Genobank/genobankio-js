@@ -252,6 +252,36 @@
           }
         }
       }
+    },
+    "10": {
+      "status": "active",
+      "internationalName": "SARS-CoV-2-IgM",
+      "descriptionLocalizations": {
+        "en": "SARS-CoV2 IgM antibody test was administered",
+        "es": "Se administró la prueba de anticuerpos IgM SARS-CoV2",
+        "pt": "O teste de anticorpos SARS-CoV2 IgM foi administrado",
+        "zh": "进行了 SARS-CoV2 IgM 抗体测试"
+      },
+      "resultsTaxonomy": {
+        "N": {
+          "internationalName": "NEGATIVE",
+          "descriptionLocalizations": {
+            "en": "IgM SARS-CoV-2 not detected",
+            "es": "IgM SARS-CoV-2 no se detectó",
+            "pt": "IgM SARS-CoV-2 não foi detectado",
+            "zh": "未检测到 SARS-CoV-2"
+          }
+        },
+        "P": {
+          "internationalName": "POSITIVE",
+          "descriptionLocalizations": {
+            "en": "IgM SARS-CoV-2 was detected",
+            "es": "IgM SARS-CoV-2 se detectó",
+            "pt": "IgM SARS-CoV-2 foi detectado",
+            "zh": "检测到SARS-CoV-2"
+          }
+        }
+      }
     }
   }
 }
