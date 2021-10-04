@@ -1,4 +1,4 @@
-import { Context, Spec } from '@hayspec/spec';
+import { Spec } from '@hayspec/spec';
 import { NetworkType } from '../config/enums';
 import { PermitteeSigner } from '../cryptography/permittee-signer';
 import { LaboratoryProcedureTaxonomy } from '../model/laboratory-procedure';
@@ -13,7 +13,7 @@ spec.test('Creates test certificate', async (ctx) => {
   const network = new Network(NetworkType.TEST);
 
   const taxonomy = new LaboratoryProcedureTaxonomy();
-  const procedure = taxonomy.getProcedureByCode('6');
+  const procedure = taxonomy.getProcedureByCode('10');
   const procedureResult = taxonomy.getProcedureResultByCode(procedure, 'N');
 
   const permittee = new PermitteeRepresentation({
