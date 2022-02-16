@@ -24,7 +24,9 @@ spec.test('Creates test certificate', async (ctx) => {
     procedureTime: new Date(),
     procedure,
     procedureResult,
-    procedureSerial: ''
+    procedureSerial: '',
+    imageUri:'www.domain.com/image.png',
+    jsonData: '{"name": "test", "age": "30", "height": "1.80", "weight": "80"}',
   });
 
   const signer = new PermitteeSigner('wrong outside clever wagon father insane boy junk punch duck drift cupboard', 41);

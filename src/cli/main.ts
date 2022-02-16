@@ -29,7 +29,7 @@ program
 
 program
   .command('certificates')
-  .arguments('<twelveWordPhase> <permitteeSerial> <patientName> <patientPassport> <procedureCode> <procedureResultCode> <procedureSerial> <timestamp>')
+  .arguments('<twelveWordPhase> <permitteeSerial> <patientName> <patientPassport> <procedureCode> <procedureResultCode> <procedureSerial> <timestamp> <imageUri> <jsonData>')
   .description('This notarizes a laboratory result using the GenoBank.io platform. Running on the production network is billable per your laboratory agreement.')
   .option('-t, --test', 'Run in test environment.')
   .option('-p, --production', 'Run in production environment.')
@@ -48,6 +48,8 @@ Input:
   procedureResultCode   must be a result key in the Laboratory Procedure Taxonomy
   procedureSerial       must match [A-Z0-9 -]*
   timestamp             procedure/sample collection time as number of milliseconds since UNIX epoch
+  imageUri              must match [A-Za-z0-9 .-]+
+  jsonData              must match [A-Za-z0-9 .-]+
 
 Output:
   A complete URL for the certificate is printed to standard output. 
@@ -59,7 +61,7 @@ References:
     `)
 
     
-  .action(async (twelveWordPhase, permitteeSerial, patientName, patientPassport, procedureCode, procedureResultCode, procedureSerial, timestamp, options) => {
+  .action(async (twelveWordPhase, permitteeSerial, patientName, patientPassport, procedureCode, procedureResultCode, procedureSerial, timestamp, imageUri, jsonData, options) => {
 
     try {
       console.log("Blockchain Lab Results Certification");
@@ -82,7 +84,7 @@ References:
       const taxonomy = new LaboratoryProcedureTaxonomy();
       const procedure = taxonomy.getProcedureByCode(procedureCode);
       const procedureResult = taxonomy.getProcedureResultByCode(procedure, procedureResultCode);
-    
+
       const permittee = new PermitteeRepresentation({
         network,
         patientName,
@@ -91,7 +93,9 @@ References:
         procedureTime: new Date(parseInt(timestamp)),
         procedure,
         procedureResult,
-        procedureSerial
+        procedureSerial,
+        imageUri,
+        jsonData
       });
 
       console.log(`Patient:    ${yellowColor(permittee.patientName)}`);
@@ -100,6 +104,9 @@ References:
       console.log(`Result:     ${yellowColor(permittee.procedureResult.code)}`);
       console.log(`Serial:     ${yellowColor(permittee.procedureSerial)}`);
       console.log(`Time:       ${yellowColor(permittee.procedureTime.getTime())}`);
+      console.log(`imageUri:    ${yellowColor(permittee.imageUri)}`);
+      console.log(`json:    ${yellowColor(permittee.jsonData)}`);
+
     
       const platform = new Platform(network);
     

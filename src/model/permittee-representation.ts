@@ -15,6 +15,8 @@ export class PermitteeRepresentation {
   public procedureSerial: string;
   public procedureTime: Date;
   public permitteeSerial: number;
+  public imageUri: string;
+  public jsonData: string;
 
   constructor(data: PermitteeRepresentationsInput) {
     this.network = data.network;
@@ -40,6 +42,20 @@ export class PermitteeRepresentation {
     this.permitteeSerial = data.permitteeSerial;
     this.procedure = data.procedure;
     this.procedureResult = data.procedureResult;
+
+
+    const vPatientImageUri = PermitteeRepresentation.validateImageUri(data.imageUri)
+    if (!vPatientImageUri.success) {
+      throw new Error(vPatientImageUri.error);
+    }
+    this.imageUri = data.imageUri;
+
+    const vPatientJsonData = PermitteeRepresentation.validateJsonData(data.jsonData)
+    if (!vPatientJsonData.success) {
+      throw new Error(vPatientJsonData.error);
+    }
+    this.jsonData = data.jsonData;
+
   }
 
   public static validatePatientPassport(patientPassport: string): ValidateResult {
@@ -98,6 +114,40 @@ export class PermitteeRepresentation {
     return data;
   }
 
+  public static validateImageUri(patientImageUri: string): ValidateResult {
+    const regex = /^[A-Z0-9 -]+$/g; // A–Z, 0–9, space, -
+    const patientImageUriRes = regex.exec(patientImageUri);
+  
+    const data = {
+      success: true,
+      error: null
+    }
+  
+    if (patientImageUri == '') {
+      data.success = false;
+      data. error = 'Input field is empty.';
+    }
+  
+    return data;
+  }
+
+  public static validateJsonData(patientJsonData: string): ValidateResult {
+    console.log("\n\n", patientJsonData, "\n\n");
+    
+    const data = {
+      success: true,
+      error: null
+    }
+    try {
+      JSON.parse(patientJsonData);
+    } catch (e) {
+        console.log(patientJsonData);
+        data.success = false;
+        data. error = 'Invalid json data.';
+    }
+    return data;
+  }
+
   public getTightSerialization(): string {
     return [
       this.patientName,
@@ -120,6 +170,8 @@ export class PermitteeRepresentation {
       this.procedureSerial,
       this.procedureTime.toISOString(),
       this.permitteeSerial,
+      this.imageUri,
+      this.jsonData
     ].join('|');
   }
 

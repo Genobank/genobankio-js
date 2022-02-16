@@ -32,7 +32,9 @@ export type PermitteeRepresentationsInput = {
   procedureResult: LaboratoryProcedureResult,
   procedureSerial: string,
   procedureTime: Date,
-  permitteeSerial: number
+  permitteeSerial: number,
+  imageUri: string,
+  jsonData: string
 }
 
 export type SignatureInformation = {
