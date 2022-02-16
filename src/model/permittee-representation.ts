@@ -132,7 +132,6 @@ export class PermitteeRepresentation {
   }
 
   public static validateJsonData(patientJsonData: string): ValidateResult {
-    console.log("\n\n", patientJsonData, "\n\n");
     
     const data = {
       success: true,
